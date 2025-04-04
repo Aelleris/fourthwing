@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Gestion du loader vidéo et affichage du bouton
     const loader = document.getElementById("loader");
-    const buttonContainer = document.getElementById('button-container');
+    const buttonContainer = document.getElementById('main');
 
     // Après 5 secondes (durée de la vidéo)
     setTimeout(() => {

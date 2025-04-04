@@ -4,6 +4,18 @@
     padding: 0;
     box-sizing: border-box;
 }
+:root {
+    --textlight: #E3C57E;
+    --text: #220E19;
+    --bordeaux : #571C33;
+    --title : "bookmania", serif;
+    --readingtext: "ivymode", sans-serif;
+  }
+
+  a{
+    cursor: pointer;
+  }
+
 
 html,
 body {
@@ -15,57 +27,208 @@ body {
 /* Styles communs à toutes les pages */
 body {
     color: #fff;
-    font-family: Arial, sans-serif;
+    font-family: var(--readingtext);
+    background: url(images/background.png) center/cover fixed no-repeat;
     /* overflow: hidden; */
 }
 
 /* ===== Styles communs pour les boutons ===== */
 #button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 64px;
+height: auto;
+
+animation: slide-top 1s cubic-bezier(0.250,0.460,0.450,0.940) both;   
+animation-delay: 7s;
+}
+@keyframes slide-top{
+    0%{
+        transform : translateY(130px);
+        opacity: 0;
+    }
+    100%{
+        transform : translateY(0);
+        opacity: 1;
+    }
+}
+
+#book-logo{
+    width: 576px;
+height: 575.996px;
+background-blend-mode: hard-light;
+mix-blend-mode: hard-light;
+
+}
+#book-logo img{
+object-fit: contain;
+}
+#main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     opacity: 0;
     visibility: hidden;
     transition: opacity 1.5s ease-in-out, visibility 0s linear 1.5s;
     z-index: 500;
 }
-
-#button-container.visible {
+#main.visible {
     opacity: 1;
     visibility: visible;
     transition: opacity 1.5s ease-in-out, visibility 0s;
 }
+#button-style{
+    display: inline-flex;
+justify-content: center;
+align-items: center;
+}
+#button-style::after{
+    width: 13.17px;
+    height: 93px;
+content: url(images/rightglyph.svg);
+}
+#button-style::before{
+width: 13.17px;
+    height: 93px;
+content: url(images/leftglyph.svg);
 
+}
 .redirect-button {
-    display: inline-block;
-    padding: 16px 40px;
-    font-size: 1.8rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.6);
-    border: 2px solid #fff;
-    border-radius: 50px;
+    display: flex;
+    padding: 24px 48px;
+    justify-content: center;
+    align-items: center;
+    border-top: 2px solid #E3C57E;
+border-bottom: 2px solid #E3C57E;
+background: rgba(34, 14, 25, 0.24);
+text-align: center;
+font-size: 32px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+    color: var(--textlight);
     text-decoration: none;
     transition: all 0.3s ease;
-    font-family: Arial, sans-serif;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5.349999904632568px);
 }
 
 .redirect-button:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    transform: scale(1.05);
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+    color: #EDD9AB;
+    border-top: 2px solid #EDD9AB;
+border-bottom: 2px solid #EDD9AB;
+background: #571C33;    
+}
+
+/* Header nav*/
+
+header{
+display: grid;
+grid-template-columns: 1fr 4fr repeat(2, auto);
+grid-template-rows: auto;
+grid-column-gap: 8px;
+grid-row-gap: 0px;
+padding: 24px 96px;
+
+}
+#logo{
+    grid-area: 1 / 1 / 2 / 2;
+
 }
 
 
 
+.logo{
+    color: #E3C57E;
+    display: flex;
+padding: 8px;
+justify-content: center;
+align-items: center;
+gap: 1px;
+border-radius: 66px;
+border: 2px solid #E3C57E;
+background: rgba(34, 14, 25, 0.24);
+}
+.logo span{
+    width: 76px;
+height: 76px;
+aspect-ratio: 1/1;
+}
+
+.logo:hover{
+    color: #EDD9AB;
+    border-top: 2px solid #EDD9AB;
+border-bottom: 2px solid #EDD9AB;
+background: #571C33;  
+}
+#separateur{
+    grid-area: 1 / 2 / 2 / 3;
+}
+#btn-author{
+    grid-area: 1 / 3 / 2 / 4; 
+display:inline-flex;
+align-items:center;
+justify-content: center;
+}
+#btn-buy{
+    grid-area: 1 / 4 / 2 / 5;
+display:inline-flex;
+align-items:center;
+justify-content: center;
+}
+
+#btn-buy::after{
+    height: 48px;
+    width: 7.28px;
+content: url(images/Group\ 2.svg);
+}
+#btn-buy::before{
+height: 48px;
+    width: 7.28px;
+content: url(images/Group\ 1.svg);
+}
+
+#btn-author::after{
+    height: 48px;
+    width: 7.28px;
+content: url(images/Group\ 2.svg);
+}
+#btn-author::before{
+height: 48px;
+    width: 7.28px;
+content: url(images/Group\ 1.svg);
+
+}
+.s-btn{
+    display: inline-flex;
+    padding: 13px 48px;
+    border-top: 2px solid #E3C57E;
+border-bottom: 2px solid #E3C57E;
+background: rgba(34, 14, 25, 0.24);
+text-align: center;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+    color: var(--textlight);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5.349999904632568px);
+}
+.s-btn:hover{
+    color: #EDD9AB;
+    border-top: 2px solid #EDD9AB;
+border-bottom: 2px solid #EDD9AB;
+background: #571C33;    
+}
 /* ===== Page d'accueil (index.html) ===== */
+
 
 /* Loader vidéo qui s'affiche en plein écran */
 #loader {
@@ -83,9 +246,9 @@ body {
 }
 
 #loader video {
-    width: 50%;
-    height: 50%;
-    /* object-fit: cover; */
+    /*width: 50%;
+    height: 50%;*/
+     object-fit: cover; 
 }
 
 /* ===== Page de diaporama (slides.html) ===== */
@@ -119,7 +282,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transform: scale(1.1);
+   transform: scale(1.1);
 }
 
 /* Animation de zoom appliquée lors de l'activation */
@@ -132,10 +295,11 @@ body {
 @keyframes zoom {
     0% {
         transform: scale(1);
-    }
+     }
 
     100% {
         transform: scale(1.1);
+        
     }
 }
 
@@ -143,12 +307,16 @@ body {
 .caption {
     place-self: center;
     position: absolute;
-    bottom: 50px;
-    width: 70%;
+    bottom: 0;
+    padding-block: 100px 50px;
+    padding-inline: 64px;
+    min-height: 200px;
+    width: 100%;
     text-align: center;
     font-size: 1.5rem;
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
 }
 
 

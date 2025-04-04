@@ -5,22 +5,38 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>fourthwing</title>
+        <link rel="stylesheet" href="https://use.typekit.net/ohj1laf.css">
         <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     </head>
 
     <body class="home-page">
         <!-- Loader vidéo -->
         <div id="loader">
             <video autoplay muted playsinline>
-                <source src="images/loading.mp4" type="video/mp4">
+                <source src="images/loader.mp4" type="video/mp4">
                 Votre navigateur ne supporte pas la vidéo.
             </video>
         </div>
-
-        <!-- Bouton de redirection (initialement caché) -->
+<div id="main">
+    <header>
+    <div id="logo"><a href="content.html" title="Sommaire"><span class="logo material-symbols-outlined">
+    menu
+        </span></a></div>
+    <div id="separateur"></div>
+    <div id="btn-author"><a class="s-btn" target="_blank href="http://">Author</a></div>
+   <div id="btn-buy"><a class="s-btn" target="_blank href="http://">Buy the book</a></div>
+</header> 
+<!-- Bouton de redirection (initialement caché) -->
         <div id="button-container">
-            <a href="slides.html" class="redirect-button">Découvrir</a>
+            <div id="book-logo">
+                <img src="images/logobook.png" alt="">
+            </div>
+            
+            <div id="button-style"><a href="slides.html" class="redirect-button">Discover</a></div>
         </div>
+</div>
+       
 
         <script src="script.js"></script>
     </body>

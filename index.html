@@ -39,11 +39,12 @@
         </div>
 <div id="main">
     <header>
-    <div id="logo"><a href="content.html" title="Sommaire"><span class="logo material-symbols-outlined">
+    <div id="logo"><a href="sommaire.html" title="Sommaire"><span class="logo material-symbols-outlined">
     menu
         </span></a></div>
     <div id="separateur"></div>
-    <div id="btn-author"><a class="s-btn" target="_blank href="http://">Author</a></div>
+    <div id="btn-lore"><a class="s-btn" href="lore.html">Lore</a></div>
+    <div id="btn-author"><a class="s-btn" href="author.html">Author</a></div>
    <div id="btn-buy"><a class="s-btn" target="_blank href="https://www.fnac.com/o11452363/Fourth-wing-1/w-4#ID15980281">Buy the book</a></div>
 </header> 
 <!-- Bouton de redirection (initialement caché) -->
@@ -51,20 +52,27 @@
             <div id="book-logo">
                 <img src="images/logobook.png" alt="">
             </div>
-            
+            <div class="intro-accueil">
+                <p class="emphasis">Get Ready To Fly Or Die</p>
+                <p class="intro-p">Enter the brutal and elite world of a war college for dragon riders from <br>
+                    #1 New York Times bestselling author Rebecca Yarros. <br>
+                    Discover the global phenomenon that everyone can't stop talking about!</p>
+            </div>
             <div id="button-style"><a href="slides.html" class="redirect-button">Discover</a></div>
         </div>
+        <div class="bottom-content">
+            <div class="playpause sound"></div>
+        <audio id="audioBg" autoplay loop>
+        <source src="sons/son1.mp3">
+      </audio>
+  <!--   <div class="replay"></div>
+   <div class="sound"></div>-->
+</div>    
 </div>
-<div class="bottom-content">
-    <div class="replay"></div>
-    <div class="sound"></div>
-</div>       
+   
 
         <script src="script.js"></script>
     </body>
-    <audio id="audioBg" autoplay loop>
-        <source src="sons/son1.mp3">
-        Your browser doesn't support HTML5. Maybe you should upgrade.
-      </audio>
+    
     
 </html>

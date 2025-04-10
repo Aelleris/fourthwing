@@ -30,17 +30,19 @@ body {
     font-family: var(--readingtext);
     background: url(images/background.png) center/cover fixed no-repeat;
     /* overflow: hidden; */
+    
+    
 }
 
 /* ===== Styles communs pour les boutons ===== */
 #button-container {
+    flex-grow: 2;
+    width: inherit;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 64px;
-height: auto;
-
+    gap: 1.48rem;
 animation: slide-top 1s cubic-bezier(0.250,0.460,0.450,0.940) both;   
 animation-delay: 7s;
 }
@@ -56,19 +58,48 @@ animation-delay: 7s;
 }
 
 #book-logo{
-    width: 576px;
-height: 575.996px;
+max-width: 22rem;
+max-height: 22rem;
 background-blend-mode: hard-light;
 mix-blend-mode: hard-light;
+flex-shrink: 0;
 
 }
 #book-logo img{
 object-fit: contain;
+max-width: 22rem;
+max-height: 22rem;
+}
+
+.intro-accueil{
+    display: flex;
+width: 74.9375rem;
+padding: 0.3125rem 6.8125rem;
+flex-direction: column;
+align-items: center;
+gap: 0.5rem;
+}
+
+.emphasis{
+    color: #E3C57E;
+text-align: center;
+font-feature-settings: 'ss01' on, 'liga' off;
+font-family: Bookmania;
+font-size: 2rem;
+font-style: italic;
+font-weight: 600;
+line-height: normal;
+}
+.intro-p{
+    color: #FCF8EF;
+text-align: center;
+font-family: Bookmania;
+font-size: 1.5rem;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
 }
 #main{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     position: fixed;
     top: 0;
     left: 0;
@@ -77,7 +108,8 @@ object-fit: contain;
     opacity: 0;
     visibility: hidden;
     transition: opacity 1.5s ease-in-out, visibility 0s linear 1.5s;
-    z-index: 500;
+    z-index: 5;
+    backdrop-filter: blur(4px);
 }
 #main.visible {
     opacity: 1;
@@ -111,38 +143,41 @@ background: rgba(34, 14, 25, 0.24);
 text-align: center;
 font-size: 32px;
 font-style: normal;
-font-weight: 400;
+font-weight: 600;
 line-height: normal;
+text-shadow: 0px 0px 0px rgba(237, 217, 171, 0.65);
     color: var(--textlight);
     text-decoration: none;
     transition: all 0.3s ease;
     backdrop-filter: blur(5.349999904632568px);
+    font-feature-settings: 'ss11' on, 'ss16' on;
 }
 
 .redirect-button:hover {
     color: #EDD9AB;
-    border-top: 2px solid #EDD9AB;
-border-bottom: 2px solid #EDD9AB;
-background: #571C33;    
+    border-top: 2px solid #E3C57E;
+border-bottom: 2px solid #E3C57E;
+background: #571C33; 
+text-shadow: 0px 0px 4px rgba(237, 217, 171, 0.65);
+background-blend-mode: soft-light, normal;   
 }
 
 /* Header nav*/
 
 header{
+width: 100%;
 display: grid;
-grid-template-columns: 1fr 4fr repeat(2, auto);
+grid-template-columns: 1fr 4fr repeat(3, auto);
 grid-template-rows: auto;
 grid-column-gap: 8px;
 grid-row-gap: 0px;
-padding: 24px 96px;
-
+padding: 2.5rem 6rem;
 }
+
+/* MENU BTN*/
 #logo{
     grid-area: 1 / 1 / 2 / 2;
-
 }
-
-
 
 .logo{
     color: #E3C57E;
@@ -170,19 +205,25 @@ background: #571C33;
 #separateur{
     grid-area: 1 / 2 / 2 / 3;
 }
+#btn-lore{
+    grid-area: 1 / 3 / 2 / 4;
+    display:inline-flex;
+align-items:center;
+justify-content: center;
+}
 #btn-author{
-    grid-area: 1 / 3 / 2 / 4; 
+    grid-area: 1 / 4 / 2 / 5; 
 display:inline-flex;
 align-items:center;
 justify-content: center;
 }
 #btn-buy{
-    grid-area: 1 / 4 / 2 / 5;
+    grid-area: 1 / 5 / 2 / 6;
 display:inline-flex;
 align-items:center;
 justify-content: center;
 }
-
+/* --- décoration boutons --- */
 #btn-buy::after{
     height: 48px;
     width: 7.28px;
@@ -200,6 +241,18 @@ content: url(images/Group\ 1.svg);
 content: url(images/Group\ 2.svg);
 }
 #btn-author::before{
+height: 48px;
+    width: 7.28px;
+content: url(images/Group\ 1.svg);
+
+}
+
+#btn-lore::after{
+    height: 48px;
+    width: 7.28px;
+content: url(images/Group\ 2.svg);
+}
+#btn-lore::before{
 height: 48px;
     width: 7.28px;
 content: url(images/Group\ 1.svg);
@@ -364,4 +417,36 @@ background: #571C33;
 .div2 {
     grid-area: 1 / 2 / 2 / 3;
     place-self: center;
+}
+
+
+/* 
+** boutons de controls du son
+*/
+
+.bottom-content
+{
+display: flex;
+width: 100%;
+padding: 2.5rem 6rem;
+justify-content: space-between;
+align-items: center;
+}
+
+.playpause{
+    width: 2.75rem;
+    height: 2.75rem;
+    cursor: pointer;
+}
+.replay
+{
+    background-image: url(images/state=off.png);
+    background-repeat: no-repeat;
+    background-size: 80%;
+}
+.sound
+{
+    background-image: url(images/state=on.png);
+    background-repeat: no-repeat;
+    background-size: 80%;
 }

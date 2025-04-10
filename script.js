@@ -15,3 +15,25 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 1000); // Durée de transition du fondu (1s)
     }, 5000); // La vidéo est affichée pendant 5 secondes
 });
+
+const playPause = document.querySelector('.playpause');
+const audio = document.querySelector('#audioBg');
+let playing = false;
+
+
+playPause.addEventListener('click', function() {
+    playing = !playing; // la valeur de playing devient son opposé
+  
+    if (playing) {
+        
+        playPause.classList.remove("sound");
+      playPause.classList.add("replay");
+      audio.play();      
+    } else {
+       
+        playPause.classList.remove("replay");
+      playPause.classList.add("sound");
+      audio.currentTime = 0;
+       audio.pause();      
+    }
+  });

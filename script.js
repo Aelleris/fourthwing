@@ -19,6 +19,8 @@ document.addEventListener("DOMContentLoaded", function () {
 const playPause = document.querySelector('.playpause');
 const audio = document.querySelector('#audioBg');
 let playing = false;
+audio.currentTime = 2285; 
+audio.volume = 0.1 ;
 
 
 playPause.addEventListener('click', function() {
@@ -33,7 +35,7 @@ playPause.addEventListener('click', function() {
        
         playPause.classList.remove("replay");
       playPause.classList.add("sound");
-      audio.currentTime = 0;
+      audio.currentTime = 2285;
        audio.play();      
     }
   });

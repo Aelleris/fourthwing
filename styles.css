@@ -324,7 +324,7 @@ cursor: pointer;
     width: 100%;
     height: 100%;
     opacity: 0;
-    transition: opacity 1s ease-in-out;
+    transition: opacity 2s ease-in-out;
     display: grid;
 }
 
@@ -338,41 +338,62 @@ cursor: pointer;
     width: 100%;
     height: 100%;
     object-fit: cover;
-   transform: scale(1.1);
+    transform-origin: bottom;
+    transform: translateY(-40%);
+   
 }
 
 /* Animation de zoom appliquée lors de l'activation */
 .slide.active img {
-    animation: zoom 5s ease-in-out forwards;
+    animation: zoom 10s ease-in-out forwards;
+    animation: kenburns-top 11s ease-in-out forwards;
     animation-delay: 0s;
     /* Assure que l'animation commence immédiatement */
 }
+@keyframes kenburns-top {
+    0% {
+      transform: translateY(-40%);
+      
+    }
+    100% {
+      transform: translateY(0%);
+      
+    }
+  }
 
+/*
 @keyframes zoom {
     0% {
-        transform: scale(1);
+        transform: translateY(-915px);
      }
 
     100% {
-        transform: scale(1.1);
+        transform: translateY(-340px);
         
     }
-}
+}*/
 
 /* Style du sous-titre positionné en bas et centré */
 .caption {
+    display: flex;
+padding: 100px 64px 50px 64px;
+justify-content: center;
+align-items: center;
     place-self: center;
     position: absolute;
     bottom: 0;
-    padding-block: 100px 50px;
-    padding-inline: 64px;
     min-height: 200px;
     width: 100%;
     text-align: center;
-    font-size: 1.5rem;
+    font-family: Bookmania;
+font-size: 40px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+letter-spacing: 0.4px;
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, #000 100%);
 }
 
 
@@ -448,28 +469,43 @@ background-blend-mode: multiply;
     grid-row-gap: 0px;
     width: 100%;
     height: 100vh;
-    background: rgb(0, 0, 0) url("/images/image3.png") no-repeat fixed center;
+    background: rgb(0, 0, 0) url("/images/lecture/partie\ 1\ fond\ 1.png") no-repeat fixed center;
 }
 
 #partie1 img {
-    width: 60%;
+    width: 80%;
 }
 
 .div1 {
     grid-area: 1 / 1 / 2 / 2;
     justify-self: center;
     align-self: center;
+    display: inline-flex;
+padding: 24px;
+justify-content: center;
+align-items: center;
+border-radius: 12px;
+border: 2px dashed #E3C57E;
+background: rgba(34, 14, 25, 0.50);
+backdrop-filter: blur(3px);
+
 }
 
 .div1 p {
-    width: 80%;
-    padding-left: 15%;
-    font-size: 1.2em;
+    color: #FFF;
+text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.70);
+font-family: Bookmania;
+font-size: 24px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: 0.36px;
 }
 
 .div2 {
     grid-area: 1 / 2 / 2 / 3;
-    place-self: center;
+    justify-self: center;
+    align-self: end;
 }
 
 

@@ -41,3 +41,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // Démarrage du diaporama
     slideInterval = setInterval(nextSlide, slideDuration);
 });
+
+const audio = document.querySelector('#audioBgdeux');
+audio.volume = 0.1 ;

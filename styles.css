@@ -19,6 +19,7 @@
 
 html,
 body {
+    max-width: 100%;
     width: 100%;
     height: 100%;
     background-color: #000;
@@ -164,14 +165,21 @@ background-blend-mode: soft-light, normal;
 
 /* Header nav*/
 
+header.lecture{
+position: fixed;
+top: 0;
+z-index: 100;
+}
+
 header{
 width: 100%;
 display: grid;
-grid-template-columns: 1fr 4fr repeat(3, auto);
+grid-template-columns: auto auto 4fr repeat(3, auto);
 grid-template-rows: auto;
-grid-column-gap: 8px;
+gap: 1.25rem;
 grid-row-gap: 0px;
-padding: 2.5rem 6rem;
+padding: 2.5rem 6rem 2.5rem 1.5rem;
+place-items: center;
 }
 
 /* MENU BTN*/
@@ -179,46 +187,32 @@ padding: 2.5rem 6rem;
     grid-area: 1 / 1 / 2 / 2;
 }
 
-.logo{
-    color: #E3C57E;
-    display: flex;
-padding: 8px;
-justify-content: center;
-align-items: center;
-gap: 1px;
-border-radius: 66px;
-border: 2px solid #E3C57E;
-background: rgba(34, 14, 25, 0.24);
+#menu{
+    grid-area: 1 / 2 / 2 / 3;
 }
-.logo span{
-    width: 76px;
-height: 76px;
+#menu img{
+    width: 3rem;
+height: 3rem;
 aspect-ratio: 1/1;
 }
 
-.logo:hover{
-    color: #EDD9AB;
-    border-top: 2px solid #EDD9AB;
-border-bottom: 2px solid #EDD9AB;
-background: #571C33;  
-}
 #separateur{
-    grid-area: 1 / 2 / 2 / 3;
+    grid-area: 1 / 3 / 2 / 4;
 }
 #btn-lore{
-    grid-area: 1 / 3 / 2 / 4;
+    grid-area: 1 / 4 / 2 / 5;
     display:inline-flex;
 align-items:center;
 justify-content: center;
 }
 #btn-author{
-    grid-area: 1 / 4 / 2 / 5; 
+    grid-area: 1 / 5 / 2 / 6; 
 display:inline-flex;
 align-items:center;
 justify-content: center;
 }
 #btn-buy{
-    grid-area: 1 / 5 / 2 / 6;
+    grid-area: 1 / 6 / 2 / 7;
 display:inline-flex;
 align-items:center;
 justify-content: center;
@@ -306,6 +300,15 @@ background: #571C33;
 
 /* ===== Page de diaporama (slides.html) ===== */
 
+/* NAV CONTROL SKIP */
+.skip{
+    position: absolute;
+    top: 52.5px;
+    right: 75.5px;
+    z-index: 500;
+cursor: pointer;
+}
+
 /* Conteneur du diaporama en plein écran */
 .slideshow-container {
     position: relative;
@@ -379,12 +382,62 @@ background: #571C33;
 
 /* ===== Page de contenu (content.html) ===== */
 #intro {
-    width: 100%;
+    width: 100wh;
+    max-height: 100vh;
     height: 100vh;
+    background: url(images/bg-intro.png) lightgray 0px -1232.27px / 100% 274.929% no-repeat;
 }
 
 #intro img {
+    object-fit:cover;
+    height: 100%;
     width: 100%;
+    
+}
+.chapter-title{
+    display: flex;
+    width: 100%;
+    padding: 24px 0px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1{
+        padding: 23.91px 109.026px;
+        color: #E3C57E;
+text-align: center;
+font-family: IvyMode;
+font-size: 128px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+    }
+
+    .subtitle{
+        padding: 23.91px 109.026px 17.681px 109.026px;
+        color: #E3C57E;
+
+text-align: center;
+font-feature-settings: 'ss14' on, 'ss16' on;
+font-family: Bookmania;
+font-size: 48px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+    }
+}
+
+.frame-overlay{
+    display: flex;
+width: 100%;
+
+height: inherit;
+flex-direction: column;
+justify-content: center;
+align-items: flex-start;
+
+    background: rgba(34, 14, 25, 0.55);
+background-blend-mode: multiply;
 }
 
 #partie1 {

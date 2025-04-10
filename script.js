@@ -28,12 +28,12 @@ playPause.addEventListener('click', function() {
         
         playPause.classList.remove("sound");
       playPause.classList.add("replay");
-      audio.play();      
+      audio.pause();      
     } else {
        
         playPause.classList.remove("replay");
       playPause.classList.add("sound");
       audio.currentTime = 0;
-       audio.pause();      
+       audio.play();      
     }
   });

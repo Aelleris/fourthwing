@@ -20,7 +20,7 @@ const playPause = document.querySelector('.playpause');
 const audioBG = document.querySelector('#audioBg');
 const audioNarat = document.querySelector('#audioNarrateur');
 let playing = false;
-audioBG.volume = 0.1 ;
+audioBG.volume = 0.2 ;
 
 
 playPause.addEventListener('click', function() {

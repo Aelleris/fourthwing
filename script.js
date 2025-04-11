@@ -17,9 +17,10 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 const playPause = document.querySelector('.playpause');
-const audio = document.querySelector('#audioBg');
+const audioBG = document.querySelector('#audioBg');
+const audioNarat = document.querySelector('#audioNarrateur');
 let playing = false;
-audio.volume = 0.1 ;
+audioBG.volume = 0.1 ;
 
 
 playPause.addEventListener('click', function() {
@@ -29,12 +30,12 @@ playPause.addEventListener('click', function() {
         
         playPause.classList.remove("sound");
       playPause.classList.add("replay");
-      audio.pause();      
+      audioBG.pause();      
     } else {
        
         playPause.classList.remove("replay");
       playPause.classList.add("sound");
-      audio.currentTime = 0;
-       audio.play();      
+      audioBG.currentTime = 0;
+       audioBG.play();      
     }
   });
